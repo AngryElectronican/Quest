@@ -1,0 +1,185 @@
+{% load static %}
+
+
+<html>
+<head>
+	<title>Квесты</title>
+<style>
+body {
+	font-family: Arial, Verdana,  sans-serif;
+	font-size: 11pt; 
+	background-color: #fff8f0;
+	color: #333;  
+	margin: 0px;
+}
+
+table {
+	text-align: center;
+    margin-left: auto;
+	margin-right: auto; 
+}
+
+td {
+	min-width: 90px;
+	text-align: center; /* Выравнивание по ширине */
+}
+
+td > h1 {
+	color: #777; /* Цвет заголовка */
+	font-size: 24pt; /* Размер шрифта в пунктах */
+	font-family: Georgia, Times, serif; /* Семейство шрифтов */
+	font-weight: normal; /* Нормальное начертание текста  */
+}
+
+td > button {
+	margin: 10px;
+}
+
+button.bigprettybutton {
+    width:  30%;
+    height: 60px;
+}
+
+.room1 h1, .room1 td {
+	color: #a52a2a;
+}
+
+.room2 h1, .room2 td {
+	color: #2aa52a;
+}
+
+.room3 h1, .room3 td {
+	color: #2a2aa5;
+}
+
+.room4 h1, .room4 td {
+	color: #405060;
+}
+
+.room5 h1, .room5 td {
+	color: #609010;
+}
+</style>
+</head>
+<body>
+	<div align=center>
+					<button class="bigprettybutton" name="start" onclick="request('start')">START</button>
+					<button class="bigprettybutton" name="hard_reset" onclick="request('hard_reset')">HARD RESET</button>
+	</div>
+<div align=center>
+	<table width="100%" height="100%" cols="6">
+	<br>
+	<tr>
+		<td  colspan=2>
+			<h1>Комната 1</h1>
+			<br><br>
+			<table border="2">
+							<tr><td>Квест<td>Состояние<td colspan="2">Ручное управление</tr>
+							<tr><td>К1<td id="l11" style="background-color:{{colour1.0}}"><span id="q11">{{status1.0}}</span><td><button name='z11' onclick="request('z11')">Завершить</button><td><button name='r11' onclick="request('r11')">Перезагрузить</button></tr> 
+							<tr><td>К2<td id="l12" style="background-color:{{colour1.1}}"><span id="q12">{{status1.1}}</span><td><button name='z12' onclick="request('z12')">Завершить</button><td><button name='r12' onclick="request('r12')">Перезагрузить</button></tr> 
+							<tr><td>К3<td id="l13" style="background-color:{{colour1.2}}"><span id="q13">{{status1.2}}</span><td><button name='z13' onclick="request('z13')">Завершить</button><td><button name='r13' onclick="request('r13')">Перезагрузить</button></tr> 
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="room2" colspan=2>
+			<br><h1>Комната 2</h1>
+			<table border="2">
+							<tr><td>Квест<td>Состояние<td colspan="2">Ручное управление</tr>
+							<tr><td>К1<td id="l21" style="background-color:{{colour2.0}}"><span id="q21">{{status2.0}}</span><td><button name='z21' onclick="request('z21')">Завершить</button><td><button name='r21' onclick="request('r21')">Перезагрузить</button></tr> 
+							<tr><td>К2<td id="l22" style="background-color:{{colour2.1}}"><span id="q22">{{status2.1}}</span><td><button name='z22' onclick="request('z22')">Завершить</button><td><button name='r22' onclick="request('r22')">Перезагрузить</button></tr> 
+							<tr><td>К3<td id="l23" style="background-color:{{colour2.2}}"><span id="q23">{{status2.2}}</span><td><button name='z23' onclick="request('z23')">Завершить</button><td><button name='r23' onclick="request('r23')">Перезагрузить</button></tr> 
+							<tr><td>К4<td id="l24" style="background-color:{{colour2.3}}"><span id="q24">{{status2.3}}</span><td><button name='z24' onclick="request('z24')">Завершить</button><td><button name='r24' onclick="request('r24')">Перезагрузить</button></tr>
+							<tr><td>К5<td id="l25" style="background-color:{{colour2.4}}"><span id="q25">{{status2.4}}</span><td><button name='z25' onclick="request('z25')">Завершить</button><td><button name='r25' onclick="request('r25')">Перезагрузить</button></tr>			
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="room3" colspan=2>
+			<br><h1>Комната 3</h1>
+			<table border="2">
+							<tr><td>Квест<td>Состояние<td colspan="2">Ручное управление</tr>
+							<tr><td>К1<td id="l31" style="background-color:{{colour3.0}}"><span id="q31">{{status3.0}}</span><td><button name='z31' onclick="request('z31')">Завершить</button><td><button name='r31' onclick="request('r31')">Перезагрузить</button></tr> 
+							<tr><td>К2<td id="l32" style="background-color:{{colour3.1}}"><span id="q32">{{status3.1}}</span><td><button name='z32' onclick="request('z32')">Завершить</button><td><button name='r32' onclick="request('r32')">Перезагрузить</button></tr> 
+							<tr><td>К3<td id="l33" style="background-color:{{colour3.2}}"><span id="q33">{{status3.2}}</span><td><button name='z33' onclick="request('z33')">Завершить</button><td><button name='r33' onclick="request('r33')">Перезагрузить</button></tr> 
+							<tr><td>К4<td id="l34" style="background-color:{{colour3.3}}"><span id="q34">{{status3.3}}</span><td><button name='z34' onclick="request('z34')">Завершить</button><td><button name='r34' onclick="request('r34')">Перезагрузить</button></tr>
+							<tr><td>К5<td id="l35" style="background-color:{{colour3.4}}"><span id="q35">{{status3.4}}</span><td><button name='z35' onclick="request('z35')">Завершить</button><td><button name='r35' onclick="request('r35')">Перезагрузить</button></tr>
+							<tr><td>К6<td id="l36" style="background-color:{{colour3.5}}"><span id="q36">{{status3.5}}</span><td><button name='z36' onclick="request('z36')">Завершить</button><td><button name='r36' onclick="request('r36')">Перезагрузить</button></tr>		
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="room4" colspan=3>
+			<br><h1>Комната 4</h1>
+			<table border="2">
+							<tr><td>Квест<td>Состояние<td colspan="2">Ручное управление</tr>
+							<tr><td>К1<td id="l41" style="background-color:{{colour4.0}}"><span id="q41">{{status4.0}}</span><td><button name='z41' onclick="request('z41')">Завершить</button><td><button name='r41' onclick="request('r41')">Перезагрузить</button></tr> 
+							<tr><td>К2<td id="l42" style="background-color:{{colour4.1}}"><span id="q42">{{status4.1}}</span><td><button name='z42' onclick="request('z42')">Завершить</button><td><button name='r42' onclick="request('r42')">Перезагрузить</button></tr> 
+							<tr><td>К3<td id="l43" style="background-color:{{colour4.2}}"><span id="q43">{{status4.2}}</span><td><button name='z43' onclick="request('z43')">Завершить</button><td><button name='r43' onclick="request('r43')">Перезагрузить</button></tr> 
+							<tr><td>К4<td id="l44" style="background-color:{{colour4.3}}"><span id="q44">{{status4.3}}</span><td><button name='z44' onclick="request('z44')">Завершить</button><td><button name='r44' onclick="request('r44')">Перезагрузить</button></tr>
+							<tr><td>К5<td id="l45" style="background-color:{{colour4.4}}"><span id="q45">{{status4.4}}</span><td><button name='z45' onclick="request('z45')">Завершить</button><td><button name='r45' onclick="request('r45')">Перезагрузить</button></tr>
+							<tr><td>К6<td id="l46" style="background-color:{{colour4.5}}"><span id="q46">{{status4.5}}</span><td><button name='z46' onclick="request('z46')">Завершить</button><td><button name='r46' onclick="request('r46')">Перезагрузить</button></tr>		
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="room5" colspan=3>
+			<br><h1>Комната 5</h1>
+			<table border="2">
+							<tr><td>Квест<td>Состояние<td colspan="2">Ручное управление</tr>
+							<tr><td>К1<td id="l51" style="background-color:{{colour5.0}}"><span id="q51">{{status5.0}}</span><td><button name='z51' onclick="request('z51')">Завершить</button><td><button name='r51' onclick="request('r51')">Перезагрузить</button></tr> 
+							<tr><td>К2<td id="l52" style="background-color:{{colour5.1}}"><span id="q52">{{status5.1}}</span><td><button name='z52' onclick="request('z52')">Завершить</button><td><button name='r52' onclick="request('r52')">Перезагрузить</button></tr> 
+							<tr><td>К3<td id="l53" style="background-color:{{colour5.2}}"><span id="q53">{{status5.2}}</span><td><button name='z53' onclick="request('z53')">Завершить</button><td><button name='r53' onclick="request('r53')">Перезагрузить</button></tr> 
+							<tr><td>К4<td id="l54" style="background-color:{{colour5.3}}"><span id="q54">{{status5.3}}</span><td><button name='z54' onclick="request('z54')">Завершить</button><td><button name='r54' onclick="request('r54')">Перезагрузить</button></tr>
+							<tr><td>К5<td id="l55" style="background-color:{{colour5.4}}"><span id="q55">{{status5.4}}</span><td><button name='z55' onclick="request('z55')">Завершить</button><td><button name='r55' onclick="request('r55')">Перезагрузить</button></tr>
+							<tr><td>К6<td id="l56" style="background-color:{{colour5.5}}"><span id="q56">{{status5.5}}</span><td><button name='z56' onclick="request('z56')">Завершить</button><td><button name='r56' onclick="request('r56')">Перезагрузить</button></tr>	
+			</table>
+		</td>
+	</tr>
+	<tr height="5%"></tr>
+	</table>
+	<br><br><br><br>
+
+
+</div>
+<script src="{% static "jquery-3.3.1.js" %}"></script>
+<script>
+    var state="Не активно, В работе, Завершено";
+    var arr = state.split(', ');
+	function setHTML(id, state) {
+		document.getElementById(id).innerHTML = state;
+	}
+    function request(button){
+        $.ajax({
+         url : "./interface",
+         type: 'POST',
+         dataType: "text",
+		 data:button,
+         success : function (data) {
+			var array_i=data.split(']')
+			 		for(var i=0;i<6;i++){
+						var quest_i=array_i[i].substring(array_i[i].indexOf('[')+1);
+						var status_i=quest_i.split(',');
+						for(var j=0;j<6;j++){
+							if(document.getElementById('q'+(i+1)+(j+1))){
+								setHTML('q'+(i+1)+(j+1), parseInt(status_i[j]));
+							}	
+							if (document.getElementById("l"+(i+1)+(j+1))){
+								if (parseInt(status_i[j])==0){
+									document.getElementById("l"+(i+1)+(j+1)).setAttribute("style","background-color:rgb(192,192,192)");
+								}else if (parseInt(status_i[j])==1){
+									document.getElementById("l"+(i+1)+(j+1)).setAttribute("style","background-color:rgb(23,102,255)");
+								}else{
+									document.getElementById("l"+(i+1)+(j+1)).setAttribute("style","background-color:rgb(114,242,36)");
+								}
+							}
+						}
+					 }
+		 		}
+             });
+		}
+    setInterval(request,500);
+	
+    </script>
+</body>
+</html>
